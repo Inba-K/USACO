@@ -1,27 +1,11 @@
-def MOOdoku(str1,str2,str3,str4,str5,str6,M):
+def MOOdoku(str1,str2,str3,str4,str5,str6,M,M1):
     for i in range(0,5):
-        if str1[i]=='M':
-            M+=1
-        elif str2[i]=='M':
-            M+=1
-        elif str3[i]=='M':
-            M+=1
-        elif str4[i]=='M':
-            M+=1
-        elif str5[i]=='M':
-            M+=1
-        elif str6[i]=='M':
-            M+=1
-        if M>2:
-            M=0
-            return 0
-        else:
-            for j in str_list:
-                if j[i]=='.' and M<2:
-                    j[i].replace('.','M')
-                elif j[i]=='.' and M==2:
-                    j[i].replace('.','O')
-                print(j)
+        
+        for j in str_list:
+            if j[i]=='M':
+                M1+=1
+                if M1>2:
+                    return 0
 
         
         
@@ -33,5 +17,6 @@ str4=input().split()
 str5=input().split()
 str6=input().split()
 M=0
+M1=0
 str_list=[str1,str2,str3,str4,str5,str6]
 print(MOOdoku(str1,str2,str3,str4,str5,str6,M))
